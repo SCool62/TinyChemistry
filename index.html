@@ -6,6 +6,13 @@
     <title>Unity WebGL Player | Chemistry Game</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <style>
+      canvas {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
+    </style>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -90,6 +97,9 @@
 
         canvas.style.width = window.innerWidth + 'px';
         canvas.style.height = window.innerHeight + 'px';
+        
+        canvas.width = canvas.clientWidth * window.devicePixelRatio;
+        canvas.height = canvas.clientHeight * window.devicePixelRatio;
 
         unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
